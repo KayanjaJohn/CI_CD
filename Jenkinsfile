@@ -13,5 +13,11 @@ pipeline {
       }
     }
 
+    stage('Build image') {
+      steps {
+        sh 'docker build . -t trippleaunit/test-app:$BUILD_NUMBER'
+      }
+    }
+
   }
 }
